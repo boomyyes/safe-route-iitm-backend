@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: saferoute
+  datasource:
+    url: jdbc:postgresql://localhost:5432/saferoute_db
+    username: saferoute_admin
+    password: securepassword
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.spatial.dialect.postgis.PostgisDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
