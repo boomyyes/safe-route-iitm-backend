@@ -2,9 +2,9 @@ spring:
   application:
     name: saferoute
   datasource:
-    url: jdbc:postgresql://localhost:5432/saferoute_db
-    username: saferoute_admin
-    password: securepassword
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/saferoute_db}
+    username: ${DATABASE_USER:saferoute_admin}
+    password: ${DATABASE_PASSWORD:securepassword}
     driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.spatial.dialect.postgis.PostgisDialect
@@ -14,3 +14,8 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+cloudinary:
+  cloud_name: ${CLOUDINARY_CLOUD_NAME}
+  api_key: ${CLOUDINARY_API_KEY}
+  api_secret: ${CLOUDINARY_API_SECRET}
